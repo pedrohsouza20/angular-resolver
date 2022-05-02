@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PostsComponent } from 'src/app/pages/posts/posts.component';
 import { TodosComponent } from 'src/app/pages/todos/todos.component';
+import { TodosResolver } from 'src/app/pages/todos/todos.resolver';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: 'todos',
     pathMatch: 'full',
     component: TodosComponent,
+    resolve: { todos: TodosResolver }
   },
   {
     path: 'posts',
